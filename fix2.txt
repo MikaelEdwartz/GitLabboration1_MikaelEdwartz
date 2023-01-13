@@ -1,0 +1,45 @@
+mkdir GitLabboration
+cd GitLabboration
+git init
+touch README.md
+nano README.md
+git add README.md
+git commit -m "Initial commit"
+git switch -c feature1
+nano README.md
+git add README.md
+git commit -m "changed moose to mouse and add dog"
+git switch main
+nano README.md
+git add README.md
+git commit -m "changed moose to mahmut"
+git merge --no-ff feature1
+nano README.md
+git add README.md
+git commit -m "merge feature1 on main branch"
+git tag extinct
+git reset --hard HEAD~
+git branch feature2
+nano README.md
+git add README.md
+git commit -m "all animals now start on uppercase"
+git switch feature2
+touch fix1.txt
+git add fix1.txt
+git commit -m "add fix2.txt"
+touch fix2.txt
+git add fix1.txt
+git commit -m "add fix2.txt"
+git switch main
+ls
+gt cherry-pick f19b400
+ls
+
+nano fix2.txt
+git remote add origin https://github.com/MikaelEdwartz/GitLabboration1_MikaelEdwartz.git
+git branch -M main
+git push -u origin main
+
+git add fix2.txt
+git commit -m "add commands for pushing to repo on Github"
+
