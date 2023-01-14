@@ -43,3 +43,43 @@ git push -u origin main
 git add fix2.txt
 git commit -m "add commands for pushing to repo on Github"
 
+git tag -a v1.0 -m "Version 1.0"
+git rebase -i HEAD ~3
+
+pick f19b400 add fix2.txt
+squash f2f5c5 add commands for pushing to repo on Github
+pick 5d4be74 add .gitingore
+
+git switch -c feature 3
+nano fix2.txt
+
+git add fix2.txt
+git commit -m "add commands for 18-20"
+git switch main
+git merge feature3
+git push
+
+git switch feature1
+git --set-upstream origin feature1
+git switch feature2
+git --set-upstream origin feature2
+git push origin --tags
+
+git switch main
+git reset --hard HEAD~
+
+#kommandon efter texteditorn stängs ner för att förhoppningsvis göra slutgiltig push
+nano fix2.txt
+git add fix2.txt
+git commit --amend  -m "updated after failed push with additional commands"
+git switch main
+git rebase origin/main
+git push
+
+#glömde att jag göra git merge efter att jag gjort git reset --hard HEAD~
+
+git merge feature 3
+git add fix2.txt
+git commit -m "merge feature3 on main branch and fix conflicts"
+
+git push
